@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>halaman surat</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="tampilan.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">WEB RPL 1</div>
+        <ul class="nav-links">
+           <li><a href="index.html">Halaman Utama</a></li>
+           <li><a href="resep.html">Resep Makanan</a></li>
+           <li><a href="surat.html">Surat Izin</a></li>
+           <li><a href="kontak_anggota.html">Kontak Anggota</a></li>
+        </ul>
+    </nav>
+
+    <div class="main-container">
+    <div class="form-container">
+        <h1>FORMULIR PENGAJUAN SURAT IZIN</h1>
+
+        <form action="proses_surat.php" method="post" target="_blank" onsubmit="return validasiForm()">
+            <div class="form-group">
+                <label for="nama">Nama Lengkap : </label>
+                <input type="text" name="nama" id="nama" required placeholder="Masukan Nama">
+            </div>
+
+            <div class="form-group">
+                <label for="NIS">NIS : </label>
+                <input type="number"  name="nis" required placeholder="masukkan NIS anda">
+            </div>
+
+            <div class="form-group">
+                <label for="kelas">Kelas : </label>
+                <input type="text" name="kelas" id="kelas" required placeholder="anda kelas berapa?">
+            </div>
+
+            <div class="form-group">
+                <label for="alasan">Alasan Izin : </label>
+                <select  name="alasan" id="alasan" required>
+                   <option value="">--PILIH ALASAN--</option>
+                   <option value="sakit">Izin Sakit</option>
+                   <option value="Acara">Izin Acara Keluarga</option>
+                   <option value="Sementara">Izin Keluar Sekolah Sementara</option>
+                   <option value="Terlambat">Izin Terlambat Masuk Sekolah</option>
+                   <option value="Keperluan magang">Izin Keperluan Magang</option>
+                </select>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group half">
+                    <label for="Tanggal Mulai">Tanggal Mulai : </label>
+                    <input type="date" name="tgl_mulai" id="tgl_mulai" required>
+                </div>
+                <div class="form-group half">
+                     <label  for="Tanggal_selesai">Tanggal_Selesai : </label>
+                     <input type="date" name="tgl_selesai" id="tgl_selesai" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="keterangan">Keterangan : </label>
+                <textarea name="keterangan"  id="keterangan" rows="3" placeholder="Masukkan Keterangan Anda" required></textarea>
+            </div>
+            <button type="submit" class="btn-submit">Ajukan Surat</button>
+        </form>
+    </div>
+</body>
+</html>
